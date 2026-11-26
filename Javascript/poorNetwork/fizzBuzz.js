@@ -1,4 +1,4 @@
-// 1. FizzBuzz
+// 1. fizzBuzz
 function fizzBuzz(number) {
   if (number % 3 === 0 && number % 5 === 0) return "FizzBuzz";
   if (number % 3 === 0) return "Fizz";
@@ -11,7 +11,7 @@ console.log(fizzBuzz(1));
 
 console.log(" ");
 
-// 2. Power of two
+// 2. powerOfTwo
 function isPowerOfTwo(number) {
 if (number < 1) return false;
 while (number % 2 === 0) {
@@ -26,7 +26,7 @@ console.log(isPowerOfTwo(0));
 
 console.log(" ");
 
-// 3. Climb stairs 
+// 3. climbStairs 
 function climbStairs(totalSteps) {
 let previous = 1;
 let current = 1;
@@ -41,7 +41,7 @@ console.log(climbStairs(5));
 
 console.log(" ");
 
-//4.SquareRoot
+//4.squareRoot
 function findSquareRoot(number) {
 if (number < 0) {
 return "Invalid";
@@ -79,7 +79,7 @@ console.log(hammingWeight(1001));
 
 console.log(" ");
 
-// 6. Reverse integer
+// 6. reverseInteger
 function reverseInteger(number) {
 let negativeNum = false;
 if (number < 0) {
@@ -183,3 +183,38 @@ if (number % divisor === 0) sum += divisor;
 return sum === number;
 }
 console.log(checkPerfectNumber(28));
+
+
+console.log(" ");
+
+
+// 10. isHappy
+function isHappy(number) {
+let tries = 0;
+
+
+while (number !== 1 && tries < 20) {
+let sum = 0;
+
+
+while (number > 0) {
+let lastDigit = number % 10;
+sum = sum + (lastDigit * lastDigit);
+number = (number - lastDigit) / 10;
+}
+
+number = sum;
+tries = tries + 1;
+}
+
+if (number === 1) {
+return true;
+} 
+else {
+return false;
+}
+}
+
+console.log(isHappy(19));
+console.log(isHappy(2));
+
